@@ -1,0 +1,12 @@
+import {StreamingWaveWriter,memorySink,openRangedAudioSource} from '../src/index.js';
+const sink=memorySink();
+const writer=new StreamingWaveWriter(sink,{sampleRate:48000,channels:1,bitDepth:16});
+await writer.begin();
+const pcm=Float32Array.from({length:4800},(_,i)=>0.25*Math.sin(2*Math.PI*440*i/48000));
+await writer.writeFrames([pcm]);
+await writer.finish();
+const source=await openRangedAudioSource(new Blob([sink.bytes()]));
+const [decoded]=await source.read(0,4800);
+if(Math.max(...decoded)<0.24)throw Error('Roundtrip lost the signal');
+console.log(JSON.stringify({sampleRate:source.sampleRate,frames:source.frames,channels:source.channels}));
+await source.close();

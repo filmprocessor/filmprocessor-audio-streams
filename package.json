@@ -1,0 +1,33 @@
+{
+  "name": "@filmprocessor/audio-streams",
+  "version": "0.1.0",
+  "description": "Section-based audio reading, waveform peaks, resampling and WAV/RF64 writing.",
+  "type": "module",
+  "exports": "./src/index.js",
+  "files": [
+    "src",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filmprocessor/filmprocessor-audio-streams.git"
+  },
+  "keywords": [
+    "audio",
+    "waveform",
+    "pcm",
+    "rf64",
+    "resampling",
+    "filmprocessor"
+  ]
+}
