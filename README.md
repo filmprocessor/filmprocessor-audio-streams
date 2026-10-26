@@ -61,4 +61,10 @@ and output above 4 GiB without allocating a 4 GiB test file.
 AAC interoperability depends on the browser's decoder. This package does not
 claim support for every QuickTime layout, compressed codec or edit list.
 
-MIT; see `LICENSE` and `NOTICE`.
+Apache-2.0; see `LICENSE` and `NOTICE`.
+
+## Licence history
+
+Version 0.2.0 adopts Apache License 2.0 for this project. Earlier published
+versions through 0.1.0 retain their MIT licence. Third-party dependencies
+retain their own licences. See `LICENSE` and `NOTICE`.
